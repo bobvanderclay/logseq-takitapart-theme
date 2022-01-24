@@ -1,0 +1,59 @@
+:root {
+  --ph-highlight-color-blue: #55b8fe;
+  --ph-highlight-color-green: #46da48;
+  --ph-highlight-color-red: #fd709a;
+  --ph-highlight-color-purple: #ac8cf1;
+  --ph-highlight-color-yellow: #fcd713;
+  --ph-highlight-scroll-into-color: rgba(255, 75, 93, 0.67);
+  --ph-view-container-width: 42vw;
+}
+
+:root {
+  /* 𝐄𝐯𝐞𝐫𝐟𝐨𝐫𝐞𝐬𝐭 */
+  --ef_bg0: #2f383e;
+  --ef_bg1: #374247;
+  --ef_bg2: #404c51;
+  --ef_bg3: #4a555b;
+  --ef_bg4: #525c62;
+  --ef_bg5: #596763;
+  --ef_bg_visual: #573e4c;
+  --ef_bg_red: #544247;
+  --ef_bg_green: #445349;
+  --ef_bg_blue: #3b5360;
+  --ef_bg_yellow: #504f45;
+  --ef_fg: #d3c6aa;
+  --ef_red: #e67e80;
+  --ef_orange: #e69875;
+  --ef_yellow: #dbbc7f;
+  --ef_green: #a1c080;
+  --ef_aqua: #83c092;
+  --ef_blue: #7fbbb3;
+  --ef_purple: #d699b6;
+  --ef_grey0: #7a8478;
+  --ef_grey1: #859289;
+  --ef_grey2: #9da9a0;
+
+  /*
+  --text-normal: #fbf1c7;
+  --text-muted: #d5c4a1;
+  --text-faint: #ac9f86;
+  */
+}
+
+:root {
+  --takitapart-grey: hsl(90 16% 88%);
+  --takitapart-grey-h: 90;
+
+  --alizarin-crimson: hsl(0, 78%, 51%);
+  --tango: hsl(20, 83%, 52%);
+  --carrot-orange: hsl(32, 89%, 53%);
+  --supernova: hsl(46, 98%, 52%);
+  --turbo: hsl(56, 100%, 48%);
+  --atlantis: hsl(79, 66%, 44%);
+  --deep-sea: hsl(158, 99%, 28%);
+  --bondi-blue: hsl(192, 96%, 37%);
+  --jelly-bean: hsl(208, 61%, 43%);
+  --victoria: hsl(233, 38%, 43%);
+  --eminence: hsl(278, 41%, 38%);
+  --lipstick: hsl(322, 97%, 39%);
+}

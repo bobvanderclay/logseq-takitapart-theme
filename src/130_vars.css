@@ -1,0 +1,40 @@
+:root {
+  --zIndex-canvas: 1;
+  --zIndex-wysiwyg: 2;
+  --zIndex-layerUI: 3;
+}
+
+:root {
+  scrollbar-width: thin;
+  scrollbar-color: var(--ls-scrollbar-foreground-color)
+    var(--ls-scrollbar-background-color);
+  --ls-z-index-level-0: 0;
+  --ls-z-index-level-1: 9;
+  --ls-z-index-level-2: 99;
+  --ls-z-index-level-3: 999;
+  --ls-z-index-level-4: 9999;
+  --ls-z-index-level-5: 99999;
+  --ls-right-sidebar-width: 40%;
+}
+
+:root {
+  --ls-draggable-handle-height: 30px;
+}
+
+:root {
+  --ls-tag-text-opacity: 0.8;
+  --ls-tag-text-hover-opacity: 1;
+  --ls-page-text-size: 1em;
+  --ls-page-title-size: 24px;
+  --ls-main-content-max-width: 810px;
+  --ls-main-content-max-width-wide: 100%;
+  --ls-font-family: Inter;
+  --ls-scrollbar-width: 6px;
+  --ls-border-radius-low: 4px;
+  --ls-border-radius-medium: 8px;
+  --ls-headbar-height: 3rem;
+  --ls-headbar-inner-top-padding: 0px;
+  --ls-left-sidebar-width: 240px;
+  --ls-left-sidebar-sm-width: 70%;
+  --ls-left-sidebar-nav-btn-size: 38px;
+}
