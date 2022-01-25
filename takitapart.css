@@ -206,6 +206,16 @@ body::after {
 
 /* ======================================================================== */
 
+.cp__header a {
+    color: var(--takitapart-blue) !important;
+  }
+
+.cp__header a.button.active,
+  .cp__header a.button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    background-blend-mode: multiply;
+  }
+
 /* -- L Sidebar ----------------------------------------------------------- */
 
 .sidebar-item {
@@ -213,11 +223,24 @@ body::after {
 }
 
 .left-sidebar-inner {
-  background-color: var(--takitapart-red)
+  background-color: var(--takitapart-navy)
 }
 
 .left-sidebar-inner a {
     color: var(--takitapart-grey);
+    opacity: 0.75;
+    mix-blend-mode: screen;
+    font-weight: 600;
+  }
+
+.left-sidebar-inner a.item:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    background-blend-mode: multiply;
+  }
+
+.left-sidebar-inner .nav-content-item > .header:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    background-blend-mode: multiply;
   }
 
 .left-sidebar-inner .new-page {
@@ -226,7 +249,22 @@ body::after {
 
 .left-sidebar-inner .nav-content-item > .bd ul a {
     color: var(--takitapart-grey);
+    opacity: 0.8;
+
+    mix-blend-mode: screen;
+    font-weight: 400
   }
+
+.left-sidebar-inner .nav-content-item > .bd ul a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      background-blend-mode: screen;
+    }
+
+.left-sidebar-inner {
+
+  .left-sidebar-inner .nav-content-item > .bd ul a:hover {
+  }
+}
 
 .left-sidebar-inner .recent-item a .page-icon {
         color: transparent
@@ -238,8 +276,12 @@ body::after {
 /* -- Right Sidebar ------------------------------------------------------- */
 
 .cp__right-sidebar {
-  background-color: hsl(var(--takitapart-grey-h), 11%, 85%);
+  background-color: hsl(var(--takitapart-grey-h), 11%, 85%)
 }
+
+.cp__right-sidebar .cp__right-sidebar-topbar {
+    background-color: transparent;
+  }
 
 /* ======================================================================== */
 
@@ -326,3 +368,24 @@ blockquote {
 .color-level {
   background-color: hsl(var(--takitapart-grey-h), 10%, 85%);
 }
+
+/* ======================================================================== */
+
+.block-content h1 {
+    font-weight: 700;
+  }
+
+.block-content h2 {
+  }
+
+.block-content h3 {
+  }
+
+.block-content h4 {
+  }
+
+.block-content h5 {
+  }
+
+.block-content h6 {
+  }

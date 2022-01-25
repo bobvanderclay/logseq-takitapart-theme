@@ -1,13 +1,37 @@
 /* ======================================================================== */
+.cp__header {
+  & a {
+    color: var(--takitapart-blue) !important;
+  }
+  & a.button.active,
+  & a.button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    background-blend-mode: multiply;
+  }
+}
+
 /* -- L Sidebar ----------------------------------------------------------- */
 .sidebar-item {
   box-shadow: none !important;
 }
 
 .left-sidebar-inner {
-  background-color: var(--takitapart-red);
+  background-color: var(--takitapart-navy);
   & a {
     color: var(--takitapart-grey);
+    opacity: 0.75;
+    mix-blend-mode: screen;
+    font-weight: 600;
+  }
+
+  & a.item:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    background-blend-mode: multiply;
+  }
+
+  & .nav-content-item > .header:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    background-blend-mode: multiply;
   }
 
   & .new-page {
@@ -16,6 +40,18 @@
 
   & .nav-content-item > .bd ul a {
     color: var(--takitapart-grey);
+    opacity: 0.8;
+
+    mix-blend-mode: screen;
+    font-weight: 400;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      background-blend-mode: screen;
+    }
+  }
+
+  .left-sidebar-inner .nav-content-item > .bd ul a:hover {
   }
 
   & .recent-item {
@@ -32,6 +68,10 @@
 /* -- Right Sidebar ------------------------------------------------------- */
 .cp__right-sidebar {
   background-color: hsl(var(--takitapart-grey-h), 11%, 85%);
+
+  & .cp__right-sidebar-topbar {
+    background-color: transparent;
+  }
 }
 
 /* ======================================================================== */
@@ -109,4 +149,21 @@ blockquote {
 /* ------------------------------------------------------------------------ */
 .color-level {
   background-color: hsl(var(--takitapart-grey-h), 10%, 85%);
+}
+
+/* ======================================================================== */
+.block-content {
+  & h1 {
+    font-weight: 700;
+  }
+  & h2 {
+  }
+  & h3 {
+  }
+  & h4 {
+  }
+  & h5 {
+  }
+  & h6 {
+  }
 }
