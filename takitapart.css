@@ -9,42 +9,11 @@
 }
 
 :root {
-  /* 𝐄𝐯𝐞𝐫𝐟𝐨𝐫𝐞𝐬𝐭 */
-  --ef_bg0: #2f383e;
-  --ef_bg1: #374247;
-  --ef_bg2: #404c51;
-  --ef_bg3: #4a555b;
-  --ef_bg4: #525c62;
-  --ef_bg5: #596763;
-  --ef_bg_visual: #573e4c;
-  --ef_bg_red: #544247;
-  --ef_bg_green: #445349;
-  --ef_bg_blue: #3b5360;
-  --ef_bg_yellow: #504f45;
-  --ef_fg: #d3c6aa;
-  --ef_red: #e67e80;
-  --ef_orange: #e69875;
-  --ef_yellow: #dbbc7f;
-  --ef_green: #a1c080;
-  --ef_aqua: #83c092;
-  --ef_blue: #7fbbb3;
-  --ef_purple: #d699b6;
-  --ef_grey0: #7a8478;
-  --ef_grey1: #859289;
-  --ef_grey2: #9da9a0;
-
-  /*
-  --text-normal: #fbf1c7;
-  --text-muted: #d5c4a1;
-  --text-faint: #ac9f86;
-  */
-}
-
-:root {
-  --takitapart-grey: hsl(90 16% 88%);
-  --takitapart-grey-h: 90;
+  /* --takitapart-grey: hsl(180 16% 88%);
+  --takitapart-grey-h: 180; */
 
   --alizarin-crimson: hsl(0, 78%, 51%);
+  --alizarin-crimson-h: 0;
   --tango: hsl(20, 83%, 52%);
   --carrot-orange: hsl(32, 89%, 53%);
   --supernova: hsl(46, 98%, 52%);
@@ -52,10 +21,18 @@
   --atlantis: hsl(79, 66%, 44%);
   --deep-sea: hsl(158, 99%, 28%);
   --bondi-blue: hsl(192, 96%, 37%);
+  --bondi-blue-h: 192;
   --jelly-bean: hsl(208, 61%, 43%);
   --victoria: hsl(233, 38%, 43%);
   --eminence: hsl(278, 41%, 38%);
   --lipstick: hsl(322, 97%, 39%);
+
+  --takitapart-grey: hsl(60, 11%, 89%);
+  --takitapart-grey-h: 60;
+  --takitapart-red: hsl(8, 72%, 47%);
+  --takitapart-yellow: hsl(48, 100%, 48%);
+  --takitapart-blue: hsl(198, 65%, 51%);
+  --takitapart-navy: hsl(195, 35%, 17%);
 }
 
 /* Fonts */
@@ -103,12 +80,12 @@
 
 .white-theme,
 html[data-theme='light'] {
-  --ls-primary-background-color: hsl(var(--takitapart-grey-h), 16%, 88%);
-  --ls-secondary-background-color: hsl(var(--takitapart-grey-h), 16%, 88%);
-  --ls-tertiary-background-color: hsl(var(--takitapart-grey-h), 16%, 88%);
+  --ls-primary-background-color: var(--takitapart-grey);
+  --ls-secondary-background-color: var(--takitapart-grey);
+  --ls-tertiary-background-color: var(--takitapart-grey);
   --ls-quaternary-background-color: #e8e5de;
   --ls-table-tr-even-background-color: #f7f7f7;
-  --ls-active-primary-color: var(--bondi-blue);
+  --ls-active-primary-color: var(--takitapart-blue);
   --ls-active-secondary-color: #003761;
   --ls-block-properties-background-color: #f7f7f7;
   --ls-page-properties-background-color: #f7f7f7;
@@ -118,17 +95,17 @@ html[data-theme='light'] {
   --ls-secondary-border-color: #e2e2e2;
   --ls-guideline-color: rgba(46, 27, 5, 0.08);
   --ls-menu-hover-color: var(--ls-a-chosen-bg);
-  --ls-primary-text-color: #433f38;
+  --ls-primary-text-color: var(--takitapart-navy);
   --ls-secondary-text-color: #161e2e;
   --ls-title-text-color: var(--ls-primary-text-color);
-  --ls-link-text-color: var(--bondi-blue);
+  --ls-link-text-color: var(--takitapart-blue);
   --ls-link-text-hover-color: #1a537c;
-  --ls-link-ref-text-color: var(--bondi-blue);
+  --ls-link-ref-text-color: var(--takitapart-blue);
   --ls-link-ref-text-hover-color: #1a537c;
   --ls-tag-text-color: var(--ls-link-ref-text-color);
   --ls-tag-text-hover-color: var(--ls-link-ref-text-hover-color);
   --ls-slide-background-color: #fff;
-  --ls-block-bullet-border-color: #dedede;
+  --ls-block-bullet-border-color: hsl(var(--bondi-blue-h), 50%, 80%);
   --ls-block-bullet-color: rgba(67, 63, 56, 0.25);
   --ls-block-highlight-color: #c0e6fd;
   --ls-selection-background-color: #e4f2ff;
@@ -136,7 +113,7 @@ html[data-theme='light'] {
   --ls-page-checkbox-border-color: var(--ls-page-checkbox-color);
   --ls-page-blockquote-color: var(--ls-primary-text-color);
   --ls-page-blockquote-bg-color: #fbfaf8;
-  --ls-page-blockquote-border-color: #799bbc;
+  --ls-page-blockquote-border-color: var(--takitapart-blue);
   --ls-page-inline-code-bg-color: #f7f7f7;
   --ls-page-inline-code-color: var(--ls-primary-text-color);
   --ls-scrollbar-foreground-color: rgba(0, 0, 0, 0.1);
@@ -229,18 +206,123 @@ body::after {
 
 /* ======================================================================== */
 
+/* -- L Sidebar ----------------------------------------------------------- */
+
+.sidebar-item {
+  box-shadow: none !important;
+}
+
+.left-sidebar-inner {
+  background-color: var(--takitapart-red)
+}
+
+.left-sidebar-inner a {
+    color: var(--takitapart-grey);
+  }
+
+.left-sidebar-inner .new-page {
+    background-color: transparent !important;
+  }
+
+.left-sidebar-inner .nav-content-item > .bd ul a {
+    color: var(--takitapart-grey);
+  }
+
+.left-sidebar-inner .recent-item a .page-icon {
+        color: transparent
+      }
+
+.left-sidebar-inner .recent-item a .page-icon:after {
+        }
+
+/* -- Right Sidebar ------------------------------------------------------- */
+
+.cp__right-sidebar {
+  background-color: hsl(var(--takitapart-grey-h), 11%, 85%);
+}
+
+/* ======================================================================== */
+
+.block-children-left-border:hover {
+  background-color: var(--takitapart-blue);
+}
+
 h1.title {
   font-weight: 800;
 }
 
 /* -- Earlier ------------------------------------------------------------- */
 
-#journals :not[.journal-item] a {
+#journals a.fade-link {
   font-size: 24px;
 }
 
-/* -- Sidebar ------------------------------------------------------------- */
+/* ======================================================================== */
 
-.sidebar-item {
-  box-shadow: none !important;
+.editor-inner .uniline-block:is(.h1, .h2),
+.ls-block :is(h1, h2) {
+  border-bottom: none;
+  margin: 0.4em 0 0;
+}
+
+/* ------------------------------------------------------------------------ */
+
+blockquote {
+  display: block;
+  text-indent: 0;
+  padding: 8px 20px;
+  border-left: 4px solid;
+  border-left-color: var(--ls-page-blockquote-border-color, #d3d3d3);
+  background-color: var(--ls-page-blockquote-bg-color, #f7f7f7);
+  margin: 1rem 0;
+  margin-right: 8px;
+  color: var(--ls-page-blockquote-color, #24292e);
+  font-size: 1rem;
+  box-shadow: 8px 8px 0 hsl(var(--takitapart-grey-h), 15%, 75%);
+}
+
+.block-body blockquote:first-child,
+.block-body pre:first-child {
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+/* ------------------------------------------------------------------------ */
+
+.extensions__code > .CodeMirror {
+  order: 1;
+  width: 100%;
+  z-index: 0;
+  height: auto;
+  margin-top: 0px;
+  margin-bottom: 16px;
+  margin-right: 8px;
+  padding-top: 0px;
+  font-family: Fira Code, Monaco, Menlo, Consolas, 'COURIER NEW', monospace;
+  max-width: var(--ls-main-content-max-width-wide);
+  border-radius: 2px;
+  line-height: 1.45em;
+}
+
+.extensions__code-lang {
+  background-color: var(--takitapart-yellow);
+  padding: 2px 8px;
+  margin-right: 8px;
+}
+
+.cm-s-solarized.cm-s-light {
+  background-color: hsl(var(--takitapart-grey-h), 10%, 97%);
+  color: #657b83;
+  text-shadow: none;
+  box-shadow: 8px 8px 0 hsl(var(--takitapart-grey-h), 15%, 75%)
+}
+
+.cm-s-solarized.cm-s-light .CodeMirror-gutters {
+    background-color: hsl(var(--takitapart-grey-h), 11%, 94%);
+  }
+
+/* ------------------------------------------------------------------------ */
+
+.color-level {
+  background-color: hsl(var(--takitapart-grey-h), 10%, 85%);
 }

@@ -1,14 +1,112 @@
 /* ======================================================================== */
+/* -- L Sidebar ----------------------------------------------------------- */
+.sidebar-item {
+  box-shadow: none !important;
+}
+
+.left-sidebar-inner {
+  background-color: var(--takitapart-red);
+  & a {
+    color: var(--takitapart-grey);
+  }
+
+  & .new-page {
+    background-color: transparent !important;
+  }
+
+  & .nav-content-item > .bd ul a {
+    color: var(--takitapart-grey);
+  }
+
+  & .recent-item {
+    & a {
+      & .page-icon {
+        color: transparent;
+        &:after {
+        }
+      }
+    }
+  }
+}
+
+/* -- Right Sidebar ------------------------------------------------------- */
+.cp__right-sidebar {
+  background-color: hsl(var(--takitapart-grey-h), 11%, 85%);
+}
+
+/* ======================================================================== */
+.block-children-left-border:hover {
+  background-color: var(--takitapart-blue);
+}
+
 h1.title {
   font-weight: 800;
 }
 
 /* -- Earlier ------------------------------------------------------------- */
-#journals :not[.journal-item] a {
+#journals a.fade-link {
   font-size: 24px;
 }
 
-/* -- Sidebar ------------------------------------------------------------- */
-.sidebar-item {
-  box-shadow: none !important;
+/* ======================================================================== */
+.editor-inner .uniline-block:is(.h1, .h2),
+.ls-block :is(h1, h2) {
+  border-bottom: none;
+  margin: 0.4em 0 0;
+}
+
+/* ------------------------------------------------------------------------ */
+blockquote {
+  display: block;
+  text-indent: 0;
+  padding: 8px 20px;
+  border-left: 4px solid;
+  border-left-color: var(--ls-page-blockquote-border-color, #d3d3d3);
+  background-color: var(--ls-page-blockquote-bg-color, #f7f7f7);
+  margin: 1rem 0;
+  margin-right: 8px;
+  color: var(--ls-page-blockquote-color, #24292e);
+  font-size: 1rem;
+  box-shadow: 8px 8px 0 hsl(var(--takitapart-grey-h), 15%, 75%);
+}
+.block-body blockquote:first-child,
+.block-body pre:first-child {
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+/* ------------------------------------------------------------------------ */
+.extensions__code > .CodeMirror {
+  order: 1;
+  width: 100%;
+  z-index: 0;
+  height: auto;
+  margin-top: 0px;
+  margin-bottom: 16px;
+  margin-right: 8px;
+  padding-top: 0px;
+  font-family: Fira Code, Monaco, Menlo, Consolas, 'COURIER NEW', monospace;
+  max-width: var(--ls-main-content-max-width-wide);
+  border-radius: 2px;
+  line-height: 1.45em;
+}
+.extensions__code-lang {
+  background-color: var(--takitapart-yellow);
+  padding: 2px 8px;
+  margin-right: 8px;
+}
+.cm-s-solarized.cm-s-light {
+  background-color: hsl(var(--takitapart-grey-h), 10%, 97%);
+  color: #657b83;
+  text-shadow: none;
+  box-shadow: 8px 8px 0 hsl(var(--takitapart-grey-h), 15%, 75%);
+
+  & .CodeMirror-gutters {
+    background-color: hsl(var(--takitapart-grey-h), 11%, 94%);
+  }
+}
+
+/* ------------------------------------------------------------------------ */
+.color-level {
+  background-color: hsl(var(--takitapart-grey-h), 10%, 85%);
 }
