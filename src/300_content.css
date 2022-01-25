@@ -5,6 +5,18 @@ mark {
   border-radius: 3px;
 }
 
+/* Block Properties */
+.block-properties {
+  background-color: hsl(var(--takitapart-grey-h), 10%, 97%);
+  /* box-shadow: 8px 8px 0 hsl(var(--takitapart-grey-h), 15%, 75%); */
+}
+
+/* Card */
+div[data-refs-self*='"card"'] {
+  /* border-radius: 0;
+  box-shadow: 8px 8px 0 hsl(var(--takitapart-grey-h), 15%, 75%); */
+}
+
 /* ------------------------------------------------------------------------ */
 /* Heading Background */
 .heading-bg,

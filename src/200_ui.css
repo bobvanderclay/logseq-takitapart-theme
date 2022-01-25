@@ -207,3 +207,19 @@ blockquote {
     }
   }
 }
+
+.dropdown-wrapper {
+  background: var(--takitapart-grey);
+  & a {
+    color: var(--takitapart-navy);
+    opacity: 1;
+    mix-blend-mode: normal;
+    font-weight: 400;
+  }
+}
+
+.menu-link:hover,
+button.menu:focus,
+button.pull:hover {
+  background-color: hsl(var(--takitapart-grey-h), 10%, 95%);
+}

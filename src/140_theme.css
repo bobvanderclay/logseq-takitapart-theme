@@ -1,10 +1,10 @@
 .white-theme,
 html[data-theme='light'] {
   --ls-primary-background-color: var(--takitapart-grey);
-  --ls-secondary-background-color: var(--takitapart-grey);
+  --ls-secondary-background-color: hsl(var(--takitapart-grey-h), 10%, 95%);
   --ls-tertiary-background-color: var(--takitapart-grey);
   --ls-quaternary-background-color: #e8e5de;
-  --ls-table-tr-even-background-color: #f7f7f7;
+  --ls-table-tr-even-background-color: hsl(var(--takitapart-grey-h), 11%, 92%);
   --ls-active-primary-color: var(--takitapart-blue);
   --ls-active-secondary-color: #003761;
   --ls-block-properties-background-color: #f7f7f7;
