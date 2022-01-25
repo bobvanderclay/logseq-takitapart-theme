@@ -1,0 +1,34 @@
+mark {
+  background: var(--takitapart-yellow);
+  color: var(--takitapart-navy);
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+/* ------------------------------------------------------------------------ */
+/* Heading Background */
+.heading-bg,
+.with-bg-color {
+  &[style*='background-color: rgb(83, 62, 125)'] {
+    background-color: var(--takitapart-navy) !important;
+  }
+  &[style*='background-color: rgb(73, 125, 70)'] {
+    background-color: var(--takitapart-blue) !important;
+  }
+  &[style*='background-color: rgb(120, 127, 151)'] {
+    background-color: var(--takitapart-green) !important;
+  }
+  &[style*='background-color: rgb(151, 134, 38)'] {
+    background-color: var(--takitapart-lime) !important;
+  }
+  &[style*='background-color: rgb(73, 118, 123)'] {
+    background-color: var(--takitapart-yellow) !important;
+  }
+  &[style*='background-color: rgb(38, 76, 155)'] {
+    background-color: var(--takitapart-orange) !important;
+  }
+  &[style*='background-color: rgb(121, 62, 62)'] {
+    background-color: var(--takitapart-red) !important;
+  }
+}
+/* ------------------------------------------------------------------------ */

@@ -1,5 +1,5 @@
 /* ======================================================================== */
-.cp__header {
+.ls-left-sidebar-open .cp__header .l {
   & a {
     color: var(--takitapart-blue) !important;
   }
@@ -54,11 +54,25 @@
   .left-sidebar-inner .nav-content-item > .bd ul a:hover {
   }
 
+  & .favorite-item {
+    & a {
+      & .page-icon {
+        color: transparent;
+        &:after {
+          content: '•';
+          color: var(--takitapart-blue);
+        }
+      }
+    }
+  }
+
   & .recent-item {
     & a {
       & .page-icon {
         color: transparent;
         &:after {
+          content: '•';
+          color: var(--takitapart-blue);
         }
       }
     }
@@ -115,26 +129,39 @@ blockquote {
   margin-bottom: 16px;
 }
 
-/* ------------------------------------------------------------------------ */
-.extensions__code > .CodeMirror {
-  order: 1;
-  width: 100%;
-  z-index: 0;
-  height: auto;
-  margin-top: 0px;
-  margin-bottom: 16px;
-  margin-right: 8px;
-  padding-top: 0px;
-  font-family: Fira Code, Monaco, Menlo, Consolas, 'COURIER NEW', monospace;
-  max-width: var(--ls-main-content-max-width-wide);
-  border-radius: 2px;
-  line-height: 1.45em;
+/* ======================================================================== */
+.extensions__code {
+  & .CodeMirror {
+    order: 1;
+    width: 100%;
+    z-index: 0;
+    height: auto;
+    margin-top: 0px;
+    margin-bottom: 16px;
+    margin-right: 8px;
+    padding-top: 0px;
+    font-family: Fira Code, Monaco, Menlo, Consolas, 'COURIER NEW', monospace;
+    max-width: var(--ls-main-content-max-width-wide);
+    border-radius: 2px;
+    line-height: 1.45em;
+  }
+  & .extensions__code-lang {
+    background-color: var(--takitapart-yellow);
+    padding: 2px 8px;
+    margin-right: 8px;
+  }
+  & .extensions__code-calc {
+    padding: 0 0.5em;
+    margin-top: 0px;
+    margin-right: 8px;
+    top: 3px;
+    z-index: 1;
+    background: 0 0;
+    width: max-content;
+    text-align: right;
+  }
 }
-.extensions__code-lang {
-  background-color: var(--takitapart-yellow);
-  padding: 2px 8px;
-  margin-right: 8px;
-}
+
 .cm-s-solarized.cm-s-light {
   background-color: hsl(var(--takitapart-grey-h), 10%, 97%);
   color: #657b83;
@@ -165,5 +192,18 @@ blockquote {
   & h5 {
   }
   & h6 {
+  }
+}
+
+/* ======================================================================== */
+/* Tippy */
+.tippy-popper {
+  & .tippy-tooltip {
+    /* box-shadow: 8px 8px 0 hsl(var(--takitapart-grey-h), 15%, 75%); */
+
+    &.arrow-regular {
+    }
+    &.tippy-tooltip-content {
+    }
   }
 }

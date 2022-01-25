@@ -9,29 +9,15 @@
 }
 
 :root {
-  /* --takitapart-grey: hsl(180 16% 88%);
-  --takitapart-grey-h: 180; */
-
-  --alizarin-crimson: hsl(0, 78%, 51%);
-  --alizarin-crimson-h: 0;
-  --tango: hsl(20, 83%, 52%);
-  --carrot-orange: hsl(32, 89%, 53%);
-  --supernova: hsl(46, 98%, 52%);
-  --turbo: hsl(56, 100%, 48%);
-  --atlantis: hsl(79, 66%, 44%);
-  --deep-sea: hsl(158, 99%, 28%);
-  --bondi-blue: hsl(192, 96%, 37%);
-  --bondi-blue-h: 192;
-  --jelly-bean: hsl(208, 61%, 43%);
-  --victoria: hsl(233, 38%, 43%);
-  --eminence: hsl(278, 41%, 38%);
-  --lipstick: hsl(322, 97%, 39%);
-
   --takitapart-grey: hsl(60, 11%, 89%);
   --takitapart-grey-h: 60;
   --takitapart-red: hsl(8, 72%, 47%);
+  --takitapart-orange: hsl(30, 83%, 52%);
   --takitapart-yellow: hsl(48, 100%, 48%);
+  --takitapart-lime: hsl(68, 77%, 46%);
+  --takitapart-green: hsl(109, 38%, 40%);
   --takitapart-blue: hsl(198, 65%, 51%);
+  --takitapart-blue-h: 198;
   --takitapart-navy: hsl(195, 35%, 17%);
 }
 
@@ -105,11 +91,11 @@ html[data-theme='light'] {
   --ls-tag-text-color: var(--ls-link-ref-text-color);
   --ls-tag-text-hover-color: var(--ls-link-ref-text-hover-color);
   --ls-slide-background-color: #fff;
-  --ls-block-bullet-border-color: hsl(var(--bondi-blue-h), 50%, 80%);
+  --ls-block-bullet-border-color: hsl(var(--takitapart-blue-h), 50%, 80%);
   --ls-block-bullet-color: rgba(67, 63, 56, 0.25);
   --ls-block-highlight-color: #c0e6fd;
   --ls-selection-background-color: #e4f2ff;
-  --ls-page-checkbox-color: var(--bondi-blue);
+  --ls-page-checkbox-color: var(--takitapart-blue);
   --ls-page-checkbox-border-color: var(--ls-page-checkbox-color);
   --ls-page-blockquote-color: var(--ls-primary-text-color);
   --ls-page-blockquote-bg-color: #fbfaf8;
@@ -206,12 +192,12 @@ body::after {
 
 /* ======================================================================== */
 
-.cp__header a {
+.ls-left-sidebar-open .cp__header .l a {
     color: var(--takitapart-blue) !important;
   }
 
-.cp__header a.button.active,
-  .cp__header a.button:hover {
+.ls-left-sidebar-open .cp__header .l a.button.active,
+  .ls-left-sidebar-open .cp__header .l a.button:hover {
     background-color: rgba(0, 0, 0, 0.1);
     background-blend-mode: multiply;
   }
@@ -266,11 +252,22 @@ body::after {
   }
 }
 
+.left-sidebar-inner .favorite-item a .page-icon {
+        color: transparent
+      }
+
+.left-sidebar-inner .favorite-item a .page-icon:after {
+          content: '•';
+          color: var(--takitapart-blue);
+        }
+
 .left-sidebar-inner .recent-item a .page-icon {
         color: transparent
       }
 
 .left-sidebar-inner .recent-item a .page-icon:after {
+          content: '•';
+          color: var(--takitapart-blue);
         }
 
 /* -- Right Sidebar ------------------------------------------------------- */
@@ -329,28 +326,39 @@ blockquote {
   margin-bottom: 16px;
 }
 
-/* ------------------------------------------------------------------------ */
+/* ======================================================================== */
 
-.extensions__code > .CodeMirror {
-  order: 1;
-  width: 100%;
-  z-index: 0;
-  height: auto;
-  margin-top: 0px;
-  margin-bottom: 16px;
-  margin-right: 8px;
-  padding-top: 0px;
-  font-family: Fira Code, Monaco, Menlo, Consolas, 'COURIER NEW', monospace;
-  max-width: var(--ls-main-content-max-width-wide);
-  border-radius: 2px;
-  line-height: 1.45em;
-}
+.extensions__code .CodeMirror {
+    order: 1;
+    width: 100%;
+    z-index: 0;
+    height: auto;
+    margin-top: 0px;
+    margin-bottom: 16px;
+    margin-right: 8px;
+    padding-top: 0px;
+    font-family: Fira Code, Monaco, Menlo, Consolas, 'COURIER NEW', monospace;
+    max-width: var(--ls-main-content-max-width-wide);
+    border-radius: 2px;
+    line-height: 1.45em;
+  }
 
-.extensions__code-lang {
-  background-color: var(--takitapart-yellow);
-  padding: 2px 8px;
-  margin-right: 8px;
-}
+.extensions__code .extensions__code-lang {
+    background-color: var(--takitapart-yellow);
+    padding: 2px 8px;
+    margin-right: 8px;
+  }
+
+.extensions__code .extensions__code-calc {
+    padding: 0 0.5em;
+    margin-top: 0px;
+    margin-right: 8px;
+    top: 3px;
+    z-index: 1;
+    background: 0 0;
+    width: max-content;
+    text-align: right;
+  }
 
 .cm-s-solarized.cm-s-light {
   background-color: hsl(var(--takitapart-grey-h), 10%, 97%);
@@ -389,3 +397,58 @@ blockquote {
 
 .block-content h6 {
   }
+
+/* ======================================================================== */
+
+/* Tippy */
+
+.tippy-popper .tippy-tooltip {
+    /* box-shadow: 8px 8px 0 hsl(var(--takitapart-grey-h), 15%, 75%); */
+  }
+
+.tippy-popper .tippy-tooltip.arrow-regular {
+    }
+
+.tippy-popper .tippy-tooltip.tippy-tooltip-content {
+    }
+
+mark {
+  background: var(--takitapart-yellow);
+  color: var(--takitapart-navy);
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+/* ------------------------------------------------------------------------ */
+
+/* Heading Background */
+
+.heading-bg[style*='background-color: rgb(83, 62, 125)'], .with-bg-color[style*='background-color: rgb(83, 62, 125)'] {
+    background-color: var(--takitapart-navy) !important;
+  }
+
+.heading-bg[style*='background-color: rgb(73, 125, 70)'], .with-bg-color[style*='background-color: rgb(73, 125, 70)'] {
+    background-color: var(--takitapart-blue) !important;
+  }
+
+.heading-bg[style*='background-color: rgb(120, 127, 151)'], .with-bg-color[style*='background-color: rgb(120, 127, 151)'] {
+    background-color: var(--takitapart-green) !important;
+  }
+
+.heading-bg[style*='background-color: rgb(151, 134, 38)'], .with-bg-color[style*='background-color: rgb(151, 134, 38)'] {
+    background-color: var(--takitapart-lime) !important;
+  }
+
+.heading-bg[style*='background-color: rgb(73, 118, 123)'], .with-bg-color[style*='background-color: rgb(73, 118, 123)'] {
+    background-color: var(--takitapart-yellow) !important;
+  }
+
+.heading-bg[style*='background-color: rgb(38, 76, 155)'], .with-bg-color[style*='background-color: rgb(38, 76, 155)'] {
+    background-color: var(--takitapart-orange) !important;
+  }
+
+.heading-bg[style*='background-color: rgb(121, 62, 62)'], .with-bg-color[style*='background-color: rgb(121, 62, 62)'] {
+    background-color: var(--takitapart-red) !important;
+  }
+
+/* ------------------------------------------------------------------------ */
