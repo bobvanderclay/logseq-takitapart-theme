@@ -360,14 +360,14 @@ blockquote {
     text-align: right;
   }
 
-.cm-s-solarized.cm-s-light {
+.CodeMirror.cm-s-solarized {
   background-color: hsl(var(--takitapart-grey-h), 10%, 97%);
   color: #657b83;
   text-shadow: none;
   box-shadow: 8px 8px 0 hsl(var(--takitapart-grey-h), 15%, 75%)
 }
 
-.cm-s-solarized.cm-s-light .CodeMirror-gutters {
+.CodeMirror.cm-s-solarized .CodeMirror-gutters {
     background-color: hsl(var(--takitapart-grey-h), 11%, 94%);
   }
 
@@ -483,3 +483,94 @@ div[data-refs-self*='"card"'] {
   }
 
 /* ------------------------------------------------------------------------ */
+
+a.tag[data-ref*='$'] {
+  pointer-events: none;
+  background: var(--takitapart-yellow);
+  cursor: text;
+}
+
+html:not(.is-mobile) .ls-block[data-refs-self*='$header-image'] {
+  mix-blend-mode: multiply;
+  margin-top: -30px;
+  margin-left: -36px
+}
+
+html:not(.is-mobile) .ls-block[data-refs-self*='$header-image'] .tag,
+  html:not(.is-mobile) .ls-block[data-refs-self*='$header-image'] .bullet {
+    display: none;
+  }
+
+html:not(.is-mobile) .ls-block[data-refs-self*='$header-image'] .asset-container {
+    background: white;
+    position: relative;
+    filter: contrast(25000%) hue-rotate(258deg) brightness(1.6);
+    overflow: hidden;
+    transform: translateZ(0)
+  }
+
+html:not(.is-mobile) .ls-block[data-refs-self*='$header-image'] .asset-container > img {
+      filter: brightness(0.5) grayscale(1) blur(4px);
+    }
+
+html:not(.is-mobile) .ls-block[data-refs-self*='$header-image'] .asset-container:after {
+      content: '';
+      position: absolute;
+      top: -100%;
+      left: -100%;
+      right: -100%;
+      bottom: -100%;
+      background-blend-mode: multiply;
+      background: 
+        /* radial-gradient(8px 8px, cyan, white),
+        radial-gradient(8px 8px, magenta, white),
+        radial-gradient(8px 8px, yellow, white); */ radial-gradient(
+        8px 8px,
+        magenta,
+        white
+      );
+
+      background-position: 0 -3px, -2px 0, 2px 0;
+      background-size: 8px 8px;
+      mix-blend-mode: screen;
+      pointer-events: none;
+      transform: rotate(45deg);
+      /* transition: 1s ease-in-out transform; */
+      z-index: 1;
+    }
+
+[data-refs-self*='$featured'] .tag {
+    /* display: none; */
+  }
+
+[data-refs-self*='$featured'] {
+
+  background: hsl(var(--takitapart-blue-h), 50%, 90%);
+  margin-right: 8px;
+}
+
+a.tag {
+  background: var(--takitapart-blue);
+  color: white;
+  padding: 0 8px;
+  vertical-align: middle;
+  border-radius: 100px;
+  font-size: 13px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  opacity: var(--ls-tag-text-opacity, 0.8)
+}
+
+a.tag:hover {
+    opacity: var(--ls-tag-text-hover-opacity, 1);
+    color: white;
+  }
+
+.global-graph .graph-filters {
+    background: var(--ls-secondary-background-color);
+  }
+
+.global-graph .graph {
+  }

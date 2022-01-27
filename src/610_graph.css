@@ -1,0 +1,8 @@
+.global-graph {
+  & .graph-filters {
+    background: var(--ls-secondary-background-color);
+  }
+
+  & .graph {
+  }
+}

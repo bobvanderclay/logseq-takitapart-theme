@@ -162,7 +162,7 @@ blockquote {
   }
 }
 
-.cm-s-solarized.cm-s-light {
+.CodeMirror.cm-s-solarized {
   background-color: hsl(var(--takitapart-grey-h), 10%, 97%);
   color: #657b83;
   text-shadow: none;
