@@ -1,0 +1,6 @@
+a.tag[data-ref*='bug'] {
+  background: var(--takitapart-yellow);
+  color: var(--takitapart-navy);
+  &::before {
+  }
+}

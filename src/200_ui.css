@@ -10,13 +10,14 @@
   }
 }
 
-/* -- L Sidebar ----------------------------------------------------------- */
 .sidebar-item {
   box-shadow: none !important;
 }
 
+/* -- L Sidebar ----------------------------------------------------------- */
 .left-sidebar-inner {
   background-color: var(--takitapart-navy);
+
   & a {
     color: var(--takitapart-grey);
     opacity: 0.75;
