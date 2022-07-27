@@ -1,0 +1,11 @@
+#main-container {
+  margin-top: -48px;
+}
+
+body:is([data-page='page'], [data-page='home']).is-banner-active
+  #main-content-container::before {
+  width: 120%;
+  margin-left: -2rem;
+  margin-right: -2rem;
+  margin-top: -1rem;
+}
