@@ -18,6 +18,9 @@
 .left-sidebar-inner {
   background-color: var(--takitapart-navy);
 
+  & .nav-content-item {
+  }
+
   & a {
     color: var(--takitapart-grey);
     opacity: 0.75;
@@ -44,12 +47,10 @@
     background-color: transparent !important;
   }
 
-  & .nav-content-item > .bd ul a {
+  & .nav-content-item .bd ul a {
     color: var(--takitapart-grey);
-    opacity: 0.8;
-
+    opacity: 0.75;
     mix-blend-mode: screen;
-    font-weight: 400;
 
     &:hover {
       background-color: rgba(255, 255, 255, 0.1);

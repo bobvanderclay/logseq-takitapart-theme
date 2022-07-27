@@ -53,7 +53,7 @@
   --ls-page-title-size: 24px;
   --ls-main-content-max-width: 810px;
   --ls-main-content-max-width-wide: 100%;
-  --ls-font-family: Inter, 'Font Awesome 6 Pro Thin';
+  --ls-font-family: Inter;
   --ls-scrollbar-width: 6px;
   --ls-border-radius-low: 4px;
   --ls-border-radius-medium: 8px;
@@ -213,6 +213,9 @@ body::after {
   background-color: var(--takitapart-navy)
 }
 
+.left-sidebar-inner .nav-content-item {
+  }
+
 .left-sidebar-inner a {
     color: var(--takitapart-grey);
     opacity: 0.75;
@@ -239,15 +242,13 @@ body::after {
     background-color: transparent !important;
   }
 
-.left-sidebar-inner .nav-content-item > .bd ul a {
+.left-sidebar-inner .nav-content-item .bd ul a {
     color: var(--takitapart-grey);
-    opacity: 0.8;
-
-    mix-blend-mode: screen;
-    font-weight: 400
+    opacity: 0.75;
+    mix-blend-mode: screen
   }
 
-.left-sidebar-inner .nav-content-item > .bd ul a:hover {
+.left-sidebar-inner .nav-content-item .bd ul a:hover {
       background-color: rgba(255, 255, 255, 0.1);
       background-blend-mode: screen;
     }
