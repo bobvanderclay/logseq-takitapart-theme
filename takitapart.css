@@ -53,7 +53,7 @@
   --ls-page-title-size: 24px;
   --ls-main-content-max-width: 810px;
   --ls-main-content-max-width-wide: 100%;
-  --ls-font-family: Inter;
+  --ls-font-family: Inter, 'Font Awesome 6 Pro Thin';
   --ls-scrollbar-width: 6px;
   --ls-border-radius-low: 4px;
   --ls-border-radius-medium: 8px;
@@ -69,7 +69,7 @@ html[data-theme='light'] {
   --ls-primary-background-color: var(--takitapart-grey);
   --ls-secondary-background-color: hsl(var(--takitapart-grey-h), 10%, 95%);
   --ls-tertiary-background-color: var(--takitapart-grey);
-  --ls-quaternary-background-color: #e8e5de;
+  --ls-quaternary-background-color: hsl(var(--takitapart-grey-h), 10%, 90%);
   --ls-table-tr-even-background-color: hsl(var(--takitapart-grey-h), 11%, 92%);
   --ls-active-primary-color: var(--takitapart-blue);
   --ls-active-secondary-color: #003761;
@@ -91,6 +91,7 @@ html[data-theme='light'] {
   --ls-tag-text-color: var(--ls-link-ref-text-color);
   --ls-tag-text-hover-color: var(--ls-link-ref-text-hover-color);
   --ls-slide-background-color: #fff;
+  --ls-block-bullet-active-color: var(--takitapart-blue);
   --ls-block-bullet-border-color: hsl(var(--takitapart-blue-h), 50%, 80%);
   --ls-block-bullet-color: rgba(67, 63, 56, 0.25);
   --ls-block-highlight-color: #c0e6fd;
@@ -192,12 +193,12 @@ body::after {
 
 /* ======================================================================== */
 
-.ls-left-sidebar-open .cp__header .l a {
+.ls-left-sidebar-open .cp__header .l button {
     color: var(--takitapart-blue) !important;
   }
 
-.ls-left-sidebar-open .cp__header .l a.button.active,
-  .ls-left-sidebar-open .cp__header .l a.button:hover {
+.ls-left-sidebar-open .cp__header .l button.active,
+  .ls-left-sidebar-open .cp__header .l button:hover {
     background-color: rgba(0, 0, 0, 0.1);
     background-blend-mode: multiply;
   }
@@ -219,6 +220,11 @@ body::after {
     font-weight: 600;
   }
 
+.left-sidebar-inner a.item.active,
+  .left-sidebar-inner a.item:active {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
 .left-sidebar-inner a.item:hover {
     background-color: rgba(0, 0, 0, 0.05);
     background-blend-mode: multiply;
@@ -229,7 +235,7 @@ body::after {
     background-blend-mode: multiply;
   }
 
-.left-sidebar-inner .new-page {
+.left-sidebar-inner .new-page-link {
     background-color: transparent !important;
   }
 
@@ -252,23 +258,36 @@ body::after {
   }
 }
 
-.left-sidebar-inner .favorite-item a .page-icon {
-        color: transparent
-      }
+.left-sidebar-inner .page-icon {
+    margin-right: 0.5rem;
+  }
 
-.left-sidebar-inner .favorite-item a .page-icon:after {
+.left-sidebar-inner {
+
+  /* & .favorite-item {
+    & a {
+      & .page-icon {
+        color: transparent;
+        &:after {
           content: '•';
           color: var(--takitapart-blue);
         }
-
-.left-sidebar-inner .recent-item a .page-icon {
-        color: transparent
       }
+    }
+  }
 
-.left-sidebar-inner .recent-item a .page-icon:after {
+  & .recent-item {
+    & a {
+      & .page-icon {
+        color: transparent;
+        &:after {
           content: '•';
           color: var(--takitapart-blue);
         }
+      }
+    }
+  } */
+}
 
 /* -- Right Sidebar ------------------------------------------------------- */
 
@@ -282,6 +301,18 @@ body::after {
 
 /* ======================================================================== */
 
+/* Main Content */
+
+/* ======================================================================== */
+
+#app-container #head {
+  }
+
+#app-container #main-container #main-content-container {
+    }
+
+/* ======================================================================== */
+
 .block-children-left-border:hover {
   background-color: var(--takitapart-blue);
 }
@@ -292,9 +323,9 @@ h1.title {
 
 /* -- Earlier ------------------------------------------------------------- */
 
-#journals a.fade-link {
+/* #journals a.fade-link {
   font-size: 24px;
-}
+} */
 
 /* ======================================================================== */
 
@@ -402,14 +433,12 @@ blockquote {
 
 /* Tippy */
 
-.tippy-popper .tippy-tooltip {
-    /* box-shadow: 8px 8px 0 hsl(var(--takitapart-grey-h), 15%, 75%); */
-  }
-
 .tippy-popper .tippy-tooltip.arrow-regular {
     }
 
 .tippy-popper .tippy-tooltip.tippy-tooltip-content {
+      background-color: white;
+      box-shadow: 8px 8px 0 hsl(var(--takitapart-grey-h), 15%, 75%);
     }
 
 .dropdown-wrapper {
@@ -427,6 +456,10 @@ blockquote {
 button.menu:focus,
 button.pull:hover {
   background-color: hsl(var(--takitapart-grey-h), 10%, 95%);
+}
+
+.custom-context-menu {
+  background-color: white;
 }
 
 mark {
@@ -484,13 +517,55 @@ div[data-refs-self*='"card"'] {
 
 /* ------------------------------------------------------------------------ */
 
-a.tag[data-ref*='bug'] {
+/* Decisions */
+
+a.tag[data-ref='+'],
+a.tag[data-ref='++'],
+a.tag[data-ref='+++'] {
+  background: var(--takitapart-green);
+}
+
+a.tag[data-ref='-'],
+a.tag[data-ref='--'],
+a.tag[data-ref='---'] {
+  background: var(--takitapart-red);
+}
+
+/* Development */
+
+a.tag[data-ref='bug'] {
   background: var(--takitapart-yellow);
   color: var(--takitapart-navy)
 }
 
-a.tag[data-ref*='bug']::before {
+a.tag[data-ref='bug']::before {}
+
+a.tag[data-ref='question'] {
+  background: var(--takitapart-yellow);
+  color: var(--takitapart-navy)
+}
+
+a.tag[data-ref='question']::before {
   }
+
+/* Stuff */
+
+a.tag[data-ref='want'] {
+}
+
+a.tag[data-ref='buy']::before {
+    content: '🎁';
+    padding-right: 4px;
+  }
+
+a.tag[data-ref='own'] {
+}
+
+a.tag[data-ref='sell'] {
+}
+
+a.tag[data-ref='sold'] {
+}
 
 a.tag[data-ref*='$'] {
   pointer-events: none;
@@ -617,3 +692,188 @@ a.tag:hover {
 
 .global-graph .graph {
   }
+
+:root {
+  --ls-block-bullet-active-color: var(
+    --ls-block-bullet-threading-active-color-overwrite,
+    var(--ls-link-text-color)
+  );
+  --ls-block-bullet-threading-width: var(
+    --ls-block-bullet-threading-width-overwrite,
+    2px
+  );
+}
+
+.block-control {
+  z-index: 1;
+}
+
+.block-children {
+  border-left-color: var(--ls-guideline-color);
+  border-left-width: var(--ls-block-bullet-threading-width) !important;
+}
+
+.block-children-container {
+  position: relative;
+}
+
+.block-children-left-border {
+  z-index: 1;
+  position: absolute;
+  height: 100%;
+  width: 4px;
+  padding-right: 0px;
+  border-radius: 2px;
+  background-color: transparent;
+  left: -1px;
+  transition: background-color 0.2s;
+}
+
+.block-children-left-border:hover {
+  background-color: var(--ls-block-bullet-active-color);
+}
+
+.block-content-wrapper {
+  position: relative;
+  overflow-x: visible !important;
+  /* Fixme: overflow? */
+}
+
+.block-content-wrapper > div:first-child {
+  padding: 1px;
+  margin: -1px;
+  overflow-x: auto;
+}
+
+.bullet-container {
+  height: 14px !important;
+  width: 14px !important;
+  position: relative;
+  transform: translate(1px, -1px);
+}
+
+/* Block bullet path should only show in a nested block */
+
+.ls-block {
+  /* Fix for headings like h1, h2 etc */
+  /* Basic "curve" */
+  /* Fix multi-line blocks with children */
+}
+
+.ls-block .bullet {
+  background-color: var(--ls-block-bullet-active-color);
+  box-shadow: 0 0 0 1px var(--ls-block-bullet-active-color);
+}
+
+.ls-block div.items-center {
+  position: relative;
+  height: 26px !important;
+}
+
+.ls-block > .items-baseline {
+  align-items: initial;
+}
+
+.ls-block:not(:focus-within) .bullet {
+  background-color: var(--ls-block-bullet-color);
+  transform: scale(1);
+  box-shadow: none;
+}
+
+.ls-block:not(:focus-within) > .items-baseline {
+  align-items: baseline;
+}
+
+.ls-block .ls-block > div > div.items-center::before {
+  pointer-events: none;
+  content: '';
+  left: calc(var(--ls-block-bullet-threading-width) * -1);
+  right: 6px;
+  top: calc(-50% + var(--ls-block-bullet-threading-width) * 0.5 - 1px);
+  bottom: 50%;
+  /* shift left 1px for border */
+  position: absolute;
+  border-left: var(--ls-block-bullet-threading-width) solid transparent;
+  border-bottom: var(--ls-block-bullet-threading-width) solid transparent;
+  border-bottom-left-radius: 10px;
+}
+
+.ls-block .ls-block:focus-within > div > div.items-center::before {
+  border-color: var(--ls-block-bullet-active-color);
+}
+
+.ls-block .block-children > .ls-block::before {
+  pointer-events: none;
+  content: '';
+  top: -1rem;
+  bottom: 0;
+  border-left: var(--ls-block-bullet-threading-width) solid transparent;
+  left: calc(var(--ls-block-bullet-threading-width) * -1);
+  position: absolute;
+}
+
+.ls-block .block-children:focus-within > .ls-block:not(:focus-within)::before {
+  border-color: var(--ls-block-bullet-active-color);
+}
+
+.ls-block
+  .block-children:focus-within
+  > .ls-block:focus-within
+  ~ .ls-block::before {
+  border-color: transparent;
+}
+
+.ls-block[haschild='true'] > div > .block-content-wrapper::before {
+  pointer-events: none;
+  content: '';
+  top: 12px;
+  bottom: 0;
+  left: -15px;
+  position: absolute;
+  border-left: var(--ls-block-bullet-threading-width) solid transparent;
+}
+
+.ls-block[haschild='true']:focus-within > div > .block-content-wrapper::before {
+  border-color: var(--ls-block-bullet-active-color);
+}
+
+:is(.embed-block > div, .embed-page)
+  > div
+  > div
+  > div
+  > div.ls-block
+  > div
+  > div.items-center::before {
+  border-color: transparent !important;
+}
+
+@media (max-width: 640px) {
+  .ls-block[haschild='true'] > div > .block-content-wrapper::before {
+    left: -11px;
+  }
+}
+
+/* Disable for doc mode */
+
+.doc-mode div.items-center::before,
+.doc-mode div.items-center::after,
+.doc-mode .ls-block::before,
+.doc-mode .ls-block::after {
+  display: none;
+}
+
+.doc-mode .block-children {
+  border-left-width: 0px !important;
+}
+
+#main-container {
+  margin-top: -48px;
+}
+
+body:is([data-page='page'], [data-page='home']).is-banner-active
+  #main-content-container::before {
+  width: 120%;
+  margin-left: -2rem;
+  margin-right: -2rem;
+  margin-top: -1rem;
+}

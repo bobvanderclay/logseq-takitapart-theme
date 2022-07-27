@@ -1,6 +1,41 @@
-a.tag[data-ref*='bug'] {
+/* Decisions */
+a.tag[data-ref='+'],
+a.tag[data-ref='++'],
+a.tag[data-ref='+++'] {
+  background: var(--takitapart-green);
+}
+
+a.tag[data-ref='-'],
+a.tag[data-ref='--'],
+a.tag[data-ref='---'] {
+  background: var(--takitapart-red);
+}
+
+/* Development */
+a.tag[data-ref='bug'] {
+  background: var(--takitapart-yellow);
+  color: var(--takitapart-navy);
+  &::before {}
+}
+a.tag[data-ref='question'] {
   background: var(--takitapart-yellow);
   color: var(--takitapart-navy);
   &::before {
   }
+}
+
+/* Stuff */
+a.tag[data-ref='want'] {
+}
+a.tag[data-ref='buy'] {
+  &::before {
+    content: '🎁';
+    padding-right: 4px;
+  }
+}
+a.tag[data-ref='own'] {
+}
+a.tag[data-ref='sell'] {
+}
+a.tag[data-ref='sold'] {
 }
